@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('ocorrencias', function (Blueprint $table) {
             $table->id('id_ocorrencias');
             $table->char('servico_ocorrencias', length: 3);
-            $table->dateTime('data_ocorrencias');
+            $table->date('data_ocorrencias');
             $table->char('atendida_ocorrencias', length: 1);
-            $table->dateTime('data_atendimento');
+            $table->date('data_atendimento');
             $table->string('mensagem_ocorrencias', length: 1000);
-            $table->foreign('id_ocorrencias')->references('id_cliente')->on('clientes');
+            $table->foreignId('fk_ocorrencias');
+            $table->foreign('fk_ocorrencias')->references('id_cliente')->on('clientes');
 
         });
     }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
 
             $table->id('id_cliente');
-            $table->string('name_cliente', length: 10);
+            $table->string('nome_cliente', length: 10);
             $table->string('sobrenome_cliente', length: 20);
             $table->string('rua_cliente', length: 50);
             $table->string('bairro_cliente', length: 40);
