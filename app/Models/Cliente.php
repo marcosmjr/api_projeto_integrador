@@ -17,7 +17,7 @@ class Cliente extends Model
      * @var list<string>
      */
     protected $fillable = [
-        'name_cliente',
+        'nome_cliente',
         'sobrenome_cliente',
         'rua_cliente',
         'bairro_cliente',

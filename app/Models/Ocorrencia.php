@@ -16,5 +16,6 @@ class Ocorrencia extends Model
         'atendida_ocorrencias',
         'data_atendimento',
         'mensagem_ocorrencias',
+        'fk_ocorrencias'
     ];
 }

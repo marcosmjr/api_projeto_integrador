@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use PhpParser\Node\NullableType;
 
 return new class extends Migration
 {
@@ -14,18 +15,20 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
 
             $table->id('id_cliente');
-            $table->string('nome_cliente', length: 10);
-            $table->string('sobrenome_cliente', length: 20);
-            $table->string('rua_cliente', length: 50);
-            $table->string('bairro_cliente', length: 40);
-            $table->string('numero_cliente', length: 5);
-            $table->string('cidade_cliente', length: 40);
-            $table->char('estado_cliente', length: 2);
+            $table->string('nome_cliente', length: 10)->nullable();
+            $table->string('sobrenome_cliente', length: 20)->nullable();
+            $table->string('rua_cliente', length: 50)->nullable();
+            $table->string('bairro_cliente', length: 40)->nullable();
+            $table->string('numero_cliente', length: 5)->nullable();
+            $table->string('cidade_cliente', length: 40)->nullable();
+            $table->char('estado_cliente', length: 2)->nullable();
             $table->string('telefone_cliente', length: 15);
-            $table->string('whatsapp_cliente', length: 15);
-            $table->string('email_cliente', length: 50);
-            $table->char('preferencia_cliente', length: 3);
-            $table->string('nome_empresa_cliente', length: 50);
+            $table->string('whatsapp_cliente', length: 15)->nullable();
+            $table->string('email_cliente', length: 50)->nullable();
+            $table->char('preferencia_cliente', length: 3)->nullable();
+            $table->string('nome_empresa_cliente', length: 50)->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
 
             //$table->string('email')->unique();
             //$table->timestamp('email_verified_at')->nullable();
